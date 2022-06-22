@@ -36,7 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'App',
-    'rest_framework'
+    'rest_framework',
+    'django.contrib.sitemaps',
+    'rest_framework.authtoken'
+
 ]
 
 MIDDLEWARE = [
@@ -121,5 +124,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Django Rest Framework Default setting
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 1
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
 }
